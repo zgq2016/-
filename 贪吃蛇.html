@@ -46,12 +46,17 @@
         ];
         this.element = [];
         this.direction = obj.direction || "right";
-        this.render()
+        this.render();
       }
       Snake.prototype.render = function() {
         for (let i = 0; i < this.body.length; i++) {
           this.element[i] = document.createElement("div");
           map.element.appendChild(this.element[i]);
+        }
+        this.style();
+      };
+      Snake.prototype.style = function() {
+        for (let i = 0; i < this.body.length; i++) {
           this.element[i].style.width = this.width + "px";
           this.element[i].style.height = this.height + "px";
           this.element[i].style.backgroundColor = this.body[i].backgroundColor;
