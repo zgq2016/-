@@ -63,6 +63,12 @@
           ) {
             clearInterval(this.timer);
           }
+          if (
+            snakeHead.left === this.food.left &&
+            snakeHead.top === this.food.top
+          ) {
+            this.food.ranPos();
+          }
         }, 200);
       };
       Game.prototype.bindKey = function() {
