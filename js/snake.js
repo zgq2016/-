@@ -1,6 +1,7 @@
 (function() {
   function Snake(obj) {
     obj = obj || {};
+    this.map=obj.map
     this.width = obj.width || 20;
     this.height = obj.height || 20;
     this.body = obj.body || [
@@ -27,7 +28,7 @@
   Snake.prototype.render = function() {
     for (let i = 0; i < this.body.length; i++) {
       this.element[i] = document.createElement("div");
-      map.element.appendChild(this.element[i]);
+      this.map.element.appendChild(this.element[i]);
     }
     this.style();
   };

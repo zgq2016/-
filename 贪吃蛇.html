@@ -18,18 +18,27 @@
     <script src="./js/snake.js"></script>
     <script>
       // 地图
-      var map = new Map();
+      // var map = new Map();
       // console.log(map);
       // 食物
-      var food = new Food();
+      // var food = new Food();
       // console.log(food);
-
-      
-      var snake = new Snake();
-      setInterval(() => {
-        // snake.move();
-      }, 200);
+      // var snake = new Snake();
       // console.log(snake);
+
+      function Game() {
+        this.map = new Map();
+        this.food = new Food({
+          map: this.map
+        });
+        this.snake = new Snake({
+          map: this.map
+        });
+        setInterval(() => {
+          // this.snake.move();
+        }, 200);
+      }
+      var game = new Game();
     </script>
   </body>
 </html>
