@@ -58,5 +58,17 @@
     }
     this.style();
   };
+  Snake.prototype.growth = function() {
+    var lastBody = this.body[this.body.length - 1];
+    var newBody = {
+      left: lastBody.left,
+      top: lastBody.top,
+      backgroundColor: lastBody.backgroundColor
+    };
+    this.body.push(newBody);
+    var newBox = document.createElement("div");
+    this.element.push(newBox);
+    this.map.element.appendChild(newBox);
+  };
   window.Snake = Snake;
 })();

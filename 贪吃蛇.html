@@ -68,7 +68,9 @@
             snakeHead.top === this.food.top
           ) {
             this.food.ranPos();
+            this.snake.growth()
           }
+
         }, 200);
       };
       Game.prototype.bindKey = function() {
