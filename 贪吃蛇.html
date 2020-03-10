@@ -45,7 +45,16 @@
           if (snakeHead.left >= this.map.width) {
             clearInterval(this.timer);
           }
-        }, 300);
+          if (snakeHead.left < 0) {
+            clearInterval(this.timer);
+          }
+          if (snakeHead.top >= this.map.height) {
+            clearInterval(this.timer);
+          }
+          if (snakeHead.top < 0) {
+            clearInterval(this.timer);
+          }
+        }, 1000);
       };
       var game = new Game();
     </script>

@@ -22,7 +22,7 @@
       }
     ];
     this.element = [];
-    this.direction = obj.direction || "down";
+    this.direction = obj.direction || "up";
     this.render();
   }
   Snake.prototype.render = function() {
