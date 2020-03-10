@@ -36,6 +36,7 @@
           map: this.map
         });
         this.start();
+        this.bindKey();
       }
       // start 开始函数
       Game.prototype.start = function() {
@@ -55,6 +56,16 @@
             clearInterval(this.timer);
           }
         }, 1000);
+      };
+      Game.prototype.bindKey = function() {
+        document.addEventListener("keydown", e => {
+          // 左上右下 37 38 39 40
+          console.log(e.keyCode);
+          if (e.keyCode === 37) this.snake.direction = "left";
+          if (e.keyCode === 38) this.snake.direction = "up";
+          if (e.keyCode === 39) this.snake.direction = "right";
+          if (e.keyCode === 40) this.snake.direction = "down";
+        });
       };
       var game = new Game();
     </script>
