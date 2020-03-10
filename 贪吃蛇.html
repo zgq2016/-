@@ -39,9 +39,13 @@
       }
       // start 开始函数
       Game.prototype.start = function() {
-        var tmer = setInterval(() => {
-          // this.snake.move();
-        }, 1000);
+        this.timer = setInterval(() => {
+          this.snake.move();
+          var snakeHead = this.snake.body[0];
+          if (snakeHead.left >= this.map.width) {
+            clearInterval(this.timer);
+          }
+        }, 300);
       };
       var game = new Game();
     </script>
