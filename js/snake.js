@@ -1,7 +1,7 @@
 (function() {
   function Snake(obj) {
     obj = obj || {};
-    this.map=obj.map
+    this.map = obj.map;
     this.width = obj.width || 20;
     this.height = obj.height || 20;
     this.body = obj.body || [
@@ -22,7 +22,7 @@
       }
     ];
     this.element = [];
-    this.direction = obj.direction || "right";
+    this.direction = obj.direction || "down";
     this.render();
   }
   Snake.prototype.render = function() {
@@ -47,7 +47,15 @@
       this.body[i].left = this.body[i - 1].left;
       this.body[i].top = this.body[i - 1].top;
     }
-    this.body[0].left += this.width;
+    if (this.direction === "right") {
+      this.body[0].left += this.width;
+    } else if (this.direction === "left") {
+      this.body[0].left -= this.width;
+    } else if (this.direction === "up") {
+      this.body[0].top -= this.height;
+    } else if (this.direction === "down") {
+      this.body[0].top += this.height;
+    }
     this.style();
   };
   window.Snake = Snake;
