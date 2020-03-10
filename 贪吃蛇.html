@@ -26,6 +26,7 @@
       // var snake = new Snake();
       // console.log(snake);
 
+      // game游戏函数
       function Game() {
         this.map = new Map();
         this.food = new Food({
@@ -34,10 +35,14 @@
         this.snake = new Snake({
           map: this.map
         });
-        setInterval(() => {
-          // this.snake.move();
-        }, 200);
+        this.start();
       }
+      // start 开始函数
+      Game.prototype.start = function() {
+        var tmer = setInterval(() => {
+          // this.snake.move();
+        }, 1000);
+      };
       var game = new Game();
     </script>
   </body>
