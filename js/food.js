@@ -10,6 +10,7 @@
     this.element = null;
     this.render();
     this.ranPos();
+    this.ranColor();
   }
   Food.prototype.render = function() {
     this.element = document.createElement("div");
@@ -32,6 +33,12 @@
       getPosNum((this.map.height - this.height) / this.height) * this.height;
     this.element.style.left = this.left + "px";
     this.element.style.top = this.top + "px";
+  };
+  Food.prototype.ranColor = function() {
+    this.backgroundColor = `rgb(${getPosNum(255)},${getPosNum(255)},${getPosNum(
+      255
+    )})`;
+    this.element.style.backgroundColor = this.backgroundColor;
   };
   window.Food = Food;
 })();

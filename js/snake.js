@@ -2,6 +2,7 @@
   function Snake(obj) {
     obj = obj || {};
     this.map = obj.map;
+    this.food = obj.food;
     this.width = obj.width || 20;
     this.height = obj.height || 20;
     this.body = obj.body || [
@@ -63,7 +64,7 @@
     var newBody = {
       left: lastBody.left,
       top: lastBody.top,
-      backgroundColor: lastBody.backgroundColor
+      backgroundColor: this.food.backgroundColor
     };
     this.body.push(newBody);
     var newBox = document.createElement("div");
